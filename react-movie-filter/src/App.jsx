@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 
-const films = [
+const film = [
   { title: 'Inception', genre: 'Fantascienza' },
   { title: 'Il Padrino', genre: 'Thriller' },
   { title: 'Titanic', genre: 'Romantico' },
@@ -12,11 +12,18 @@ const films = [
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [films, setFilms] = useState(film)
 
   return (
     <>
-      
+      <div>
+        {films.map((film, index) => 
+          <div key={index}>
+            <h3>{film["title"]}</h3>
+            <p>{film["genre"]}</p>
+          </div>
+        )}
+      </div>
     </>
   )
 }
